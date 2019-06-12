@@ -9,8 +9,8 @@
 // l = "abcbac", s = "ab", return [0, 3] since the substring with length 2 starting from index 0/3 are all anagrams of "ab" ("ab", "ba").
 
 // first check if long string is empty or not, return empty array if true
-// iterate through string and slice the short string size and compare string value with short string value, capture the index if return true
-// move the pointer position two next move till the end
+// iterate through array of charater and splice base on short string size and compare string value with short string value after short
+// push the index of position of first element and index+shortStringSize - 1
 function allAnagrams(sh, lo) {
   const Arr = [];
   let current = ''
