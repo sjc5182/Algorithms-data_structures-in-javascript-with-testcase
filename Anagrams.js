@@ -18,11 +18,10 @@ function allAnagrams(sh, lo) {
   if(lo.length === '' || lo.length ===null){
     return []
   }
-  // Be mindful, splice mutate the origin array, while slice doesn't
+  // Be mindful, splice mutate the origin array, while slice doesn't, so dont make a copy of array original string that pass in as arugment
   for(let i = 0; i<lo.length; i++){
-    let longString = lo.split('');
-    current = longString.splice(i, shortStringSize).sort().join('')// ascii strings then the default sorting implementation will do
-    if(sh === current){
+     let longString = lo.split('').splice(i, shortStringSize).sort().join('')// ascii strings then the default sorting implementation will do
+    if(sh === longString){
       Arr.push([i, i+shortStringSize-1])
     }
   }
@@ -38,10 +37,10 @@ function allAnagrams(sh, lo) {
  let testData = [
    ['a', ''], // []
    ['a', 'bcdefg'], // []
-   ['a', 'aaa'], // [[0], [1], [2]
-   ['aa', 'baaaa'], //[[0,1]]
+   ['a', 'aaa'], // [[0], [1], [2]]
+   ['aa', 'baaaa'], //[[ 1, 2 ], [ 2, 3 ], [ 3, 4 ]]
    ['abc', 'bacbabc'], //[[0,2], [1,3], [2,4], [4,6]]
-   ['aab', 'ababacbbaac']
+   ['aab', 'ababacbbaac'] // [ 0, 2 ], [ 2, 4 ], [ 7, 9 ]
  ]
 
  // Testing function
