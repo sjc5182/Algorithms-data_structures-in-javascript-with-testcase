@@ -13,7 +13,6 @@
 // push the index of position of first element and index+shortStringSize - 1
 function allAnagrams(sh, lo) {
   const Arr = [];
-  let current = ''
   let shortStringSize = sh.length
   if(lo.length === '' || lo.length ===null){
     return []
